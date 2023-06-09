@@ -12,8 +12,6 @@ public class Game {
 
     private boolean isAvailable;
 
-    private String borrower;
-
     public String getTitle() {
         return title;
     }
@@ -38,11 +36,4 @@ public class Game {
         isAvailable = available;
     }
 
-    public String getBorrower() {
-        return borrower;
-    }
-
-    public void setBorrower(String borrower) {
-        this.borrower = borrower;
-    }
 }
