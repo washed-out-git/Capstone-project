@@ -18,21 +18,10 @@ public class CreateGameRequest {
     @JsonProperty("isAvailable")
     private boolean isAvailable;
 
-    @NotEmpty
-    @JsonProperty("borrower")
-    private String borrower;
-
     public CreateGameRequest(String title, String loaner, boolean isAvailable) {
         this.title = title;
         this.loaner = loaner;
         this.isAvailable = true;
-    }
-
-    public CreateGameRequest(String title, String loaner, String borrower, boolean isAvailable) {
-        this.title = title;
-        this.loaner = loaner;
-        this.borrower = borrower;
-        this.isAvailable = false;
     }
 
     public String getTitle() {
@@ -59,11 +48,4 @@ public class CreateGameRequest {
         isAvailable = available;
     }
 
-    public String getBorrower() {
-        return borrower;
-    }
-
-    public void setBorrower(String borrower) {
-        this.borrower = borrower;
-    }
 }
