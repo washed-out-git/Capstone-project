@@ -33,6 +33,11 @@ module.exports = {
       filename: 'index.html',
       inject: false
     }),
+    new HtmlWebpackPlugin({
+      template: './src/reviewsratings.html',
+      filename: 'reviewsratings.html',
+      inject: false
+    }),
     new CopyPlugin({
       patterns: [
         {

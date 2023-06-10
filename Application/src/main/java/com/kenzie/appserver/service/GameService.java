@@ -26,7 +26,6 @@ public class GameService {
         gameRecord.setTitle(createGameRequest.getTitle());
         gameRecord.setLoaner(createGameRequest.getLoaner());
         gameRecord.setAvailable(createGameRequest.isAvailable());
-        gameRecord.setBorrower(createGameRequest.getBorrower());
         gameRepository.save(gameRecord);
 
         return createGameResponse(gameRecord);
