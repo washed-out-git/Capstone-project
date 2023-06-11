@@ -6,26 +6,24 @@ import com.google.common.base.Optional;
 import javax.validation.constraints.NotEmpty;
 
 public class CreateGameRequest {
-
     @NotEmpty
     @JsonProperty("title")
     private String title;
-
     @NotEmpty
-    @JsonProperty("loaner")
+    @JsonProperty("loanerName")
     private String loaner;
 
-    @NotEmpty
     @JsonProperty("isAvailable")
     private boolean isAvailable;
 
-    private Optional<String> borrower;
+    @JsonProperty("borrowerName")
+    private String borrower;
 
-    public Optional<String> getBorrower() {
+    public String getBorrower() {
         return borrower;
     }
 
-    public void setBorrower(Optional<String> borrower) {
+    public void setBorrower(String borrower) {
         this.borrower = borrower;
     }
 

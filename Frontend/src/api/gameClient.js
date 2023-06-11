@@ -13,7 +13,7 @@ export default class GameClient extends BaseClass {
 
     constructor(props = {}){
         super();
-        const methodsToBind = ['clientLoaded', 'getExample', 'createGame'];
+        const methodsToBind = ['clientLoaded', 'createGame', 'getListOfGames'];
         this.bindClassMethods(methodsToBind, this);
         this.props = props;
         this.clientLoaded(axios);
@@ -32,27 +32,32 @@ export default class GameClient extends BaseClass {
 
     /**
      * Gets the concert for the given ID.
-     * @param id Unique identifier for a concert
+     * @param title
+     * @param loanerName
+     * @param borrowerName
      * @param errorCallback (Optional) A function to execute if the call fails.
      * @returns The concert
      */
-    async getExample(id, errorCallback) {
-        try {
-            const response = await this.client.get(`/example/${id}`);
-            return response.data;
-        } catch (error) {
-            this.handleError("getExample", error, errorCallback)
-        }
-    }
 
-    async createGame(name, errorCallback) {
+    async createGame(title, loanerName, borrowerName, errorCallback) {
         try {
-            const response = await this.client.post(`example`, {
-                name: name
+            const response = await this.client.post(`/game`, {
+                "title": title,
+                "loanerName": loanerName,
+                "borrowerName": borrowerName
             });
             return response.data;
         } catch (error) {
-            this.handleError("createExample", error, errorCallback);
+            this.handleError("createGame", error, errorCallback);
+        }
+    }
+
+    async getListOfGames(errorCallback) {
+        try {
+            const response = await this.client.get(`/game/listOfGames`);
+            return response.data;
+        } catch (error) {
+            this.handleError("listOfGames", error, errorCallback);
         }
     }
 

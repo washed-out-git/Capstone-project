@@ -13,6 +13,17 @@ public class GameResponse {
     @JsonProperty("isAvailable")
     private boolean isAvailable;
 
+    @JsonProperty("borrower")
+    private String borrower;
+
+    public String getBorrower() {
+        return borrower;
+    }
+
+    public void setBorrower(String borrower) {
+        this.borrower = borrower;
+    }
+
     public String getTitle() {
         return title;
     }

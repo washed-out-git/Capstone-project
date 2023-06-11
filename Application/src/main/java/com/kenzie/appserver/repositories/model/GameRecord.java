@@ -14,6 +14,8 @@ public class GameRecord {
 
     private boolean isAvailable;
 
+    private String borrower;
+
     @DynamoDBHashKey(attributeName = "Title")
     public String getTitle() {
         return title;
@@ -39,7 +41,13 @@ public class GameRecord {
     public void setAvailable(boolean available) {
         isAvailable = available;
     }
+    public String getBorrower() {
+        return borrower;
+    }
 
+    public void setBorrower(String borrower) {
+        this.borrower = borrower;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
