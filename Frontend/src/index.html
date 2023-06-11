@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script type="text/javascript" src="examplePage.js"></script>
+    <script type="text/javascript" src="mainPage.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
@@ -15,16 +15,16 @@
     <div class="column">
         <div class="card">
             <h2>Add a Game</h2>
-            <form class="card-content" id="create-form">
+            <form class="card-content" id="create-game-form">
                 <p class="form-field">
                     <label>Title of Game</label>
-                    <input type="text" required class="validated-field" id="create-title-field">
+                    <input type="text" required class="validated-field" id="create-game-title">
                     <label>Loaner Name</label>
-                    <input type="text" required class="validated-field" id="create-loaner-field">
+                    <input type="text" required class="validated-field" id="create-game-loaner">
                     <label>Borrower (Optional)</label>
-                    <input type="text" required class="validated-field" id="create-borrower-field">
+                    <input type="text" required class="validated-field" id="create-game-borrower">
                 </p>
-                <button type="submit">Create</button>
+                <button type="submit">Add</button>
             </form>
         </div>
     </div>
@@ -73,7 +73,7 @@
 </div>
 <div class="card" id="result">
     <h2>List of Available Games for Borrowing:</h2>
-    <p id="game-list"></p>
+    <p id="games-displayed"></p>
 </div>
 <div class="card" id="seller-redirect">
     <h2>Ratings and Reviews</h2>

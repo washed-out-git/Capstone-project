@@ -10,7 +10,25 @@ public class Game {
 
     private String loaner;
 
+    private String borrower;
+
+
     private boolean isAvailable;
+
+    public Game(String title, String loaner, String borrower) {
+        this.title = title;
+        this.loaner = loaner;
+        this.borrower = borrower;
+    }
+
+    public String getBorrower() {
+        return borrower;
+    }
+
+    public void setBorrower(String borrower) {
+        this.borrower = borrower;
+    }
+
 
     public String getTitle() {
         return title;
