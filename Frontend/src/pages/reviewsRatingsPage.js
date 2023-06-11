@@ -5,7 +5,7 @@ import ExampleClient from "../api/exampleClient";
 /**
  * Logic needed for the view playlist page of the website.
  */
-class ExamplePage extends BaseClass {
+class ReviewsRatingsPage extends BaseClass {
 
     constructor() {
         super();
@@ -81,8 +81,8 @@ class ExamplePage extends BaseClass {
  * Main method to run when the page contents have loaded.
  */
 const main = async () => {
-    const examplePage = new ExamplePage();
-    examplePage.mount();
+    const examplePage = new ReviewsRatingsPage();
+    await examplePage.mount();
 };
 
 window.addEventListener('DOMContentLoaded', main);

@@ -1,40 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script type="text/javascript" src="examplePage.js"></script>
+    <script type="text/javascript" src="mainPage.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 <body class="background">
-    <header class="header" id="header">
-        <div class="site-title">
-            <a class="header_home" href="index.html">Example App</a>
+<header class="header" id="header">
+    <div class="site-title">
+        <a class="header_home" href="index.html">Welcome to GameShare!</a>
+    </div>
+</header>
+<div class="row">
+    <div class="column">
+        <div class="card">
+            <h2>Add a Game</h2>
+            <form class="card-content" id="create-game-form">
+                <p class="form-field">
+                    <label>Title of Game</label>
+                    <input type="text" required class="validated-field" id="create-game-title">
+                    <label>Loaner Name</label>
+                    <input type="text" required class="validated-field" id="create-game-loaner">
+                    <label>Borrower (Optional)</label>
+                    <input type="text" required class="validated-field" id="create-game-borrower">
+                </p>
+                <button type="submit">Add</button>
+            </form>
         </div>
-    </header>
-    <div class="card">
-        <h2>Create Example</h2>
-        <form class="card-content" id="create-form">
-            <p class="form-field">
-                <label>Name</label>
-                <input type="text" required class="validated-field" id="create-name-field">
-            </p>
-            <button type="submit">Create</button>
-        </form>
     </div>
-    <div class="card">
-        <h2>Get By ID</h2>
-        <form class="card-content" id="get-by-id-form">
-            <p class="form-field">
-                <label>ID</label>
-                <input type="text" required class="validated-field" id="id-field">
-            </p>
-            <button type="submit">Get</button>
-        </form>
+    <div class="column">
+        <div class="card">
+            <h2>Update an Existing Game</h2>
+            <form class="card-content" id="update-form">
+                <p class="form-field">
+                    <label>Title of Game</label>
+                    <input type="text" required class="validated-field" id="update-title-field">
+                    <label>Loaner Name</label>
+                    <input type="text" required class="validated-field" id="update-loaner-field">
+                </p>
+                <button type="update">Create</button>
+            </form>
+        </div>
     </div>
-    <div class="card" id="result">
-        <h2>Result:</h2>
-        <p id="result-info"></p>
+    <div class="column">
+        <div class="card">
+            <h2>Borrow a Game</h2>
+            <form class="card-content" id="borrow-form">
+                <p class="form-field">
+                    <label>Title</label>
+                    <input type="text" required class="validated-field" id="borrow-title-field">
+                    <label>Loaner Name</label>
+                    <input type="text" required class="validated-field" id="borrow-loaner-name-field">
+                    <label>Borrower Name</label>
+                    <input type="text" required class="validated-field" id="borrow-name-field">
+                </p>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </div>
+    <div class="column">
+        <div class="card">
+            <h2>Search for Game</h2>
+            <form class="card-content" id="get-by-title-form">
+                <p class="form-field">
+                    <label>Title</label>
+                    <input type="text" required class="validated-field" id="id-field">
+                </p>
+                <button type="submit">Get</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="card" id="result">
+    <h2>List of Available Games for Borrowing:</h2>
+    <p id="games-displayed"></p>
+</div>
+<div class="card" id="seller-redirect">
+    <h2>Ratings and Reviews</h2>
+    <a href="reviewsratings.html">
+        <button type="submit">Go</button>
+    </a>
+</div>
 
 </body>
 </html>

@@ -1,0 +1,14 @@
+Resources:
+  BuyerTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      "AttributeDefinitions":
+        - "AttributeName": "Loaner"
+          "AttributeType": "S"
+      "KeySchema":
+        - "AttributeName": "Title"
+          "KeyType": "HASH"
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: false
+      BillingMode: PAY_PER_REQUEST
+      TableName: "Game"
